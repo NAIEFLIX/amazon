@@ -1,13 +1,16 @@
-var firebaseConfig = {
-apiKey: "AIzaSyCoifsQZU4X_ARBbMGEiIQSjlk5g3qpUuU",
-authDomain: "clone-two-8c1f5.firebaseapp.com",
-projectId: "clone-two-8c1f5",
-storageBucket: "clone-two-8c1f5.appspot.com",
-messagingSenderId: "793216905054",
-appId: "1:793216905054:web:a652681c4d0ae55c3069cf",
-measurementId: "G-LC641H0GZV"
-};
-// Initialize Firebase
-firebase.initializeApp(firebaseConfig);
-firebase.analytics();
 
+
+// Your web app's Firebase configuration
+  // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+  var firebaseConfig = {
+    apiKey: "AIzaSyBNTV22E6nRxs_t2rQOvVgkp0BXWJKr4Jw",
+    authDomain: "fir-5c03d.firebaseapp.com",
+    projectId: "fir-5c03d",
+    storageBucket: "fir-5c03d.appspot.com",
+    messagingSenderId: "52711684027",
+    appId: "1:52711684027:web:fa948e3a322296c6b2f69e",
+    measurementId: "G-R7ZK9HVXEW"
+  };
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+  firebase.analytics();
