@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Measure Distance Between Two Points of GeoLocation</title>
+</head>
+
+<body>
+    <label for="first">First GeoLocation</label>
+    <input type="text" id="first">
+    <br><br>
+    <label for="second">Second GeoLocation</label>
+    <input type="text" id="second">
+    <br><br>
+    <button onclick="mathStart()">Get result</button>
+    <br><br>
+    <h1 id="result"></h1>
+    <script>
+
+
+        function mathStart() {
+            const first = document.getElementById("first").value;
+            const second = document.getElementById("second").value;
+
+            const firstSplit = first.split(", ");
+            const secondSplit = second.split(", ");
+
+            var x1 = int(firstSplit[0]);
+            var y1 = int(firstSplit[1]);
+            var x2 = int(secondSplit[0]);
+            var y2 = int(secondSplit[1]);
+            calcCrow(x1, y1, x2, y2);
+        }
+
+
+        //This function takes in latitude and longitude of two location and returns the distance between them as the crow flies (in km)
+        function calcCrow(lat1, lon1, lat2, lon2) {
+            var R = 6371; // km
+            var PI = Math.PI;
+
+            var dLat = (lat2 - lat1) * PI / 180;
+            var dLon = (lon2 - lon1) * PI / 180;
+            var lat1 = lat1 * PI / 180;
+            var lat2 = lat2 * PI / 180;
+
+            var a = sin(dLat / 2) * sin(dLat / 2) +
+                sin(dLon / 2) * sin(dLon / 2) * cos(lat1) * cos(lat2);
+
+            var c = 2 * Math.atan2(root(a), root(1 - a));
+            var d = R * c;
+            alert(d);
+        }
+
+        function root(value) {
+            return Math.sqrt(value);
+        }
+        function sin(value) {
+            return Math.sin(value);
+        }
+        function cos(value) {
+            return Math.cos(value);
+        }
+        function int(value) {
+            return parseFloat(value);
+        }
+
+        // 25.637994272167766, 88.63934959677752
+        // 25.61335891918433, 88.65403049480605
+        // Distance = 3.1097133246356963km
+    </script>
+</body>
+
+</html>
